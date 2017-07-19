@@ -10,7 +10,7 @@ The MATLAB subroutines in the SALMON package (__v.1.0__) have been successfully 
 #
 > #### Installation instruction: 
 
-1.	Unzip the package [___SALMON_1.0_MAT.zip___](https://github.com/CABSEL/SALMON/blob/master/salmon_MATLAB/salmon_1.0_MAT/salmon_1.0_MAT.zip) to a preferred folder.
+1.	Unzip the package [___SALMON_1.0_MAT.zip___](https://github.com/CABSEL/SALMON/blob/master/salmon_MATLAB/salmon_1.0_MAT/salmon_1.0_MAT.zip) (7.03MB) to a preferred folder.
 2.	Download the MATLAB version of [GLMNET package](http://web.stanford.edu/~hastie/glmnet_matlab/download.html), and unzip the GLMNET package under a new subfolder in SALMON.  
 3.	Set the current working directory to SALMON in MATLAB. 
 4.	Add the path for GLMNET package.

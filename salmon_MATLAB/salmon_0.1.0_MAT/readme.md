@@ -48,7 +48,7 @@ pgn = generatePGN(GList, tftg, ppi, tftg_thre, ptf_thre, ppi_thre)
 <br />
 INPUT ARGUMENTS:
 
-*	`GList`:	The vector of genes in the same order of the genes in log2FC data. The length of `GList` should be the same as the number of rows in log2FC data.
+* `GList`:	The vector of genes in the same order of the genes in log2FC data. The length of `GList` should be the same as the number of rows in log2FC data.
 * `tftg`: The matrix of TF-gene interactions. The first column is the list of TFs, and the second column is the list of genes regulated by the corresponding TFs. The third column is optional, and if present, the column should contain the (confidence) score for each interaction.
 * `ppi`: The matrix of protein-protein interactions. Each row of the first two columns give the protein pairs with interactions. The third column is optional, and if present, the column should contain the (confidence) score for each interaction.
 * `tftg_thre`: A threshold for TF-gene interactions. This variable is used only when the confidence score of TF-gene interactions are given in the matrix `tftg`. Any TF-gene interactions with confidence scores lower than the threshold will be excluded.
@@ -70,8 +70,10 @@ slope = generateSlope( lfc, tp, group )
 ```
 <br />
 REQUIRES: __findiff.m__
+
 <br />
 INPUT ARGUMENTS:
+
 * `lfc`:	The matrix of log2FC data. Each row represents a gene and each column represents a sample.
 * `tp`:	A vector of time points of the samples in the matrix `lfc`. The length of the vector should be the same as the number of samples (i.e. the number of columns in the matrix `lfc`).
 * `group`:	A vector of indices indicating the set of samples from a particular drug/compound treatment. The (time-series) samples from the same drug treatment experiment should have the same unique index. The length of the vector should be the same as the number of samples.
@@ -110,7 +112,7 @@ OUTPUT ARGUMENTS:
 *	`A`: The matrix containing estimated _a~ij~_ from the log2FC data, where _a~ij~_ indicates the estimated regulatory impact on gene _i_ by protein _j_. The rows correspond to genes having at least one regulator based on the PGN (i.e. zeros for the others).
 
 <br /><br />
-#### ___REFERENCES___:
+#### __REFERENCES__:
 
 [1]	Kubicek, S., J. C. Gilbert, D. Fomina-yadlin, A. D. Gitlin, and Y. Yuan. 2012. Chromatin-targeting small molecules cause class-specific transcriptional changes in pancreatic endocrine cells.
 

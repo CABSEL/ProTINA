@@ -16,8 +16,8 @@ For the R package,
 
 
 ### Last Update
-* MATLAB package: version 1.0 (19.07.2017)
-* R package: version 1.0 (19.07.2017)
+* MATLAB package: **version 1.0** (19.07.2017)
+* R package: **version 1.0** (19.07.2017)
 
 
 ### License

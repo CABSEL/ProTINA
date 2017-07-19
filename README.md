@@ -21,11 +21,10 @@ For the R package,
 
 
 ### License
-Redistribution and use in source and binary forms, with or without modification, are permitted provided agreeing to the Simplified BSD Style License.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided agreeing to the *Simplified BSD Style License* (see [more](http://opensource.org/licenses/bsd-license.php)).
 
 [License](https://github.com/CABSEL/SALMON/blob/master/LICENSE) (RTF, 2 KB)
 
-Read about Simplified [BSD Style License](http://opensource.org/licenses/bsd-license.php)
 
 ### Download and installation
 Please refer to the [instruction for MATLAB](https://github.com/CABSEL/SALMON/tree/master/salmon_MATLAB/salmon_1.0_MAT/readme.md) and the [instruction for R](https://github.com/CABSEL/SALMON/tree/master/salmon_R/salmon_1.0_R/readme.md).

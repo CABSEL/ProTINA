@@ -10,7 +10,7 @@ This is a short guidance for installing and implementing `salmon`.
 to install `salmon` directly from github repository, `devtools` is required. 
 
 1. Install and load `devtools` package.
-2. Install the package, using `devtools::install_github("CABSEL/salmon/salmonR/salmonR_0.1.0")`. Your package is inatalled in R library directory.
+2. Install the package, using `devtools::install_github("CABSEL/salmon/salmon_R/salmon_0.1.0_R")`. Your package is inatalled in R library directory.
 3. Load the package, using `library(salmon)`.
 
 

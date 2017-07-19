@@ -6,7 +6,4 @@ Both MATLAB and R versions of SALMON package are available. Please refer to the 
 
 ### Prerequisites:
 For MATLAB
-DeltaNet: MATLAB® software (version R2014b or later) and SpaSM package from http://www2.imm.dtu.dk/projects/spasm (last version on 24.10.2012) and [GLMNET package](http://web.stanford.edu/~hastie/glmnet_matlab/).
 
-DeltaNet-R:  R software (versions 3.2.2 or 3.2.3 ) and R packages: "lars" for DeltaNet-lar, "glmnet", "cvTools" and "methods" for DeltaNet-lasso, and "doParallel" and "foreach" for parallel computing.
-Last Update

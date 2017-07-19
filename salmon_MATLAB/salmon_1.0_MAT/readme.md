@@ -10,7 +10,7 @@ The MATLAB subroutines in the SALMON package (__v.1.0__) have been successfully 
 #
 > #### Installation instruction: 
 
-1.	Unzip the package ___SALMON_1.0_MAT.zip___ to a preferred folder.
+1.	Unzip the package [___SALMON_1.0_MAT.zip___](https://github.com/CABSEL/SALMON/blob/master/salmon_MATLAB/salmon_1.0_MAT/salmon_1.0_MAT.zip) to a preferred folder.
 2.	Download the MATLAB version of [GLMNET package](http://web.stanford.edu/~hastie/glmnet_matlab/download.html), and unzip the GLMNET package under a new subfolder in SALMON.  
 3.	Set the current working directory to SALMON in MATLAB. 
 4.	Add the path for GLMNET package.
@@ -29,8 +29,6 @@ A subfolder in SALMON package, containing microarray data from the chromatin tar
 * ___table_of_samples.txt___: The table of sample descriptions including time points (if in time-series) and group indices (same index for the same drug)
 * ___edges-TFTG_mouse_pancreas_fromCellNet.txt___: Transcription factor (TF)-gene network for mouse pancreas cells obtained from CellNet database __[2]__
 * ___edges_ppi_fromSTRING_short.txt___: Protein-protein interactions for mouse cells obtained from STRING database __[3]__
-* ___A.mat___:	The matrix containing estimated _a~ij~_ from the log2FC data, where _a~ij~_ indicates the estimated regulatory impact on gene _i_ by protein _j_. This is one of the files produced by running the example script with the mouse data.
-* ___Pscore.mat___: The protein scores for each drug in the dataset. This is one of the files produced by running the example script with the mouse data.
 
 <br /><br />
 __2. findiff.m__
@@ -71,6 +69,7 @@ slope = generateSlope( lfc, tp, group )
 <br />
 REQUIRES: __findiff.m__
 
+
 <br />
 INPUT ARGUMENTS:
 
@@ -80,7 +79,7 @@ INPUT ARGUMENTS:
 <br />
 OUTPUT ARGUMENTS:
 
-`slope`: the slope matrix having the same dimension as the log2Fc matrix.
+`slope`: the slope matrix
 
 <br /><br />
 __5.	run_salmon_example.m__

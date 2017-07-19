@@ -1,20 +1,25 @@
-# salmon
 ---
-author: "Heeju Noh (heeju.noh@chem.ethz.ch)"
-date: July,19,2017
+title: "SALMON package (R)"
+author: "Heeju Noh", "Rudiyanto Gunawan"
+date: "July 19, 2017"
+output: html_document
 ---
+### SALMON version 1.0
 
-This is a short guidance for installing and implementing `salmon`.
+The MATLAB subroutines in the SALMON package (__v.1.0__) have been successfully tested on __R (>= 3.3.2)__  platforms. Please refer to the SALMON manuscript for more detailed information about the algorithm. Any questions regarding SALMON usage can be addressed to heeju.noh@chem.ethz.ch or to rudi.gunawan@chem.ethz.ch.
 
-## Installation instruction:
-to install `salmon` directly from github repository, `devtools` is required. 
+
+#### Installation instruction:
+
+To install `salmon` directly from github repository, `devtools` is required. 
 
 1. Install and load `devtools` package.
-2. Install the package, using `devtools::install_github("CABSEL/salmon/salmon_R/salmon_0.1.0_R")`. Your package is inatalled in R library directory.
+2. Install the package, using `devtools::install_github("CABSEL/salmon/salmon_R/salmon_1.0_R")`. Your package is inatalled in R library directory.
 3. Load the package, using `library(salmon)`.
 
 
-## Example data
+#### Example data in SALMON package
+
 SALMON package includes microarray data from the chromatin targeting study using mouse pancreatic beta cells [1]:
 
 
@@ -29,7 +34,8 @@ SALMON package includes microarray data from the chromatin targeting study using
 `ppi`: protein-protein interactions for mouse cells obtained from STRING database [3]
 
 
-## Preparation for SALMON inputs
+#### Preparation for SALMON inputs
+
 SALMON requires log2FC data and slope matrix (if data are time-series) and the adjacency matrix of protein-gene network (PGN). 
 
 The slope matrix can be calculated using `generateSlope` function.
@@ -41,14 +47,16 @@ slope <- generateSlope(lfc = lfc, tp = tp, group = group)
 ```
 
 PGN is constructed using TF-gene and protein-protein interactions. Here, we used the same thretholds as described in the SALMON manuscript.
+
 ```{r warning=FALSE,eval=FALSE,echo=TRUE}
 pgn <- generatePGN(glist = glist, tftg = tftg, ppi = ppi, tftg_thre = 0, ptf_thre = 0, 
                    ppi_thre = 500)
 ```
 
 
-## Calculating protein perturbation scores by SALMON
+#### Calculating protein perturbation scores by SALMON
 SALMON can provide an overall score for each protein in the grouped samples. If you want a score for each sample, set each sample to a single group. Here, we grouped the sample for each different drug, and used 10-fold cross validation (default). The outcome of SALMON is a list of protein score matrix and weighted PGN. To note, the rows in the outcome PGN matrix correspond to genes having at least one regulator based on the prior PGN (i.e. zeros for the others).
+
 ```{r warning=FALSE,eval=FALSE,echo=TRUE}
 result <- salmon(lfc = lfc, slope = slope, pgn = pgn, grplist = group)
 result$Pscore ## protein score matrix
@@ -61,7 +69,7 @@ result <- salmon(lfc = lfc, slope = slope, pgn = pgn, grplist = group, par = TRU
                  numCores = 4)
 ```
 
-## Ranking the proteins based on the magnitudes of estimated scores
+#### Ranking the proteins based on the magnitudes of estimated scores
 The greater magnitude of the scores by SALMON implies the higher perturbation caused by the drug. In this mouse dataset, trichostatin A is a well known histone deacetylase inhibitor. As an example, we can examine the ranks of histone deacetylases (Hdac1-Hdac11) for trichostatin.
 
 ```{r warning=FALSE,eval=FALSE,echo=TRUE}

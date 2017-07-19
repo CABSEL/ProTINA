@@ -6,7 +6,7 @@ output: html_document
 ---
 ### SALMON version 1.0
 
-The MATLAB subroutines in the SALMON package (__v.1.0__) have been successfully tested on __R (>= 3.3.2)__  platforms. Please refer to the SALMON manuscript for more detailed information about the algorithm. Any questions regarding SALMON usage can be addressed to heeju.noh@chem.ethz.ch or to rudi.gunawan@chem.ethz.ch.
+The R version of SALMON package (__v.1.0__) have been successfully tested on __R (>= 3.3.2)__  platforms. Please refer to the SALMON manuscript for more detailed information about the algorithm. Any questions regarding SALMON usage can be addressed to heeju.noh@chem.ethz.ch or to rudi.gunawan@chem.ethz.ch.
 
 
 #### Installation instruction:

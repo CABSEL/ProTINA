@@ -56,7 +56,7 @@ INPUT ARGUMENTS:
 <br />
 OUTPUT ARGUMENTS:
 
-`pgn`: The _n_ x _n_ adjacency matrix of PGN containing the values 0 or 1. The rows and columns are proteins and genes respectively, which are in the same order of the genes in `GList` with the length _n_. If the (_j_, _i_)th element of the matrix is 1, there is an interaction from protein _j_ to gene _i_ in the PGN. Otherwise, 0 is given.
+`pgn`: The _n_ x _n_ adjacency matrix of PGN. The elements of the matrix are either 0 or 1. The rows and columns correspond to proteins and genes, respectively, which follow the order given in `GList`. If the (_i_, _j_)-th element of the matrix is 1, then there exists a regulatory edge from protein _i_ to gene _j_ in the PGN, i.e. protein _i_ is regulating the expression of gene _j_.
 
 
 <br /><br />
@@ -109,7 +109,7 @@ INPUT ARGUMENTS:
 OUTPUT ARGUMENTS:
 
 * `Pscore`: The matrix of protein scores. Each row corresponds to a gene following the same order as the one in the log2FC data, while each column corresponds to a group of samples as defined in the `grplist`.
-*	`A`: The _n_ x _n_ matrix of edge weights of the PGN. The (_i_, _j_)th element of the matrix gives the weight of the regulatory edge from protein _j_ to gene _i_ in the PGN, i.e. the regulation of the expression of gene _i_ by protein _j_. The rows and columns of the matrix correspond to genes (columns) and proteins (rows) respectively in the PGN.
+* `A`: The _n_ x _n_ matrix of edge weights of the PGN. The (_i_, _j_)-th element of the matrix corresponds to the weight of the regulatory edge from protein _j_ to gene _i_ in the PGN, i.e. the regulation of the expression of gene _i_ by protein _j_. The rows and columns of the matrix correspond to genes and proteins in the PGN.
 
 <br /><br />
 #### __REFERENCES__:

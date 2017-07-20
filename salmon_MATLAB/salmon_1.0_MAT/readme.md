@@ -40,9 +40,9 @@ __3.	generatePGN.m__
 
 This function constructs the protein-gene network (PGN) by combining TF-gene and protein-protein interaction networks.
 
-`
+```
 pgn = generatePGN(GList, tftg, ppi, tftg_thre, ptf_thre, ppi_thre)
-`
+```
 <br />
 INPUT ARGUMENTS:
 
@@ -64,9 +64,9 @@ __4. 	generateSlope.m__
 
 The function for calculating slope matrix from log2FC data. If more than two time points are available for a given drug/compound treatment, then a 2nd order accurate finite difference approximation is used for calculating the slopes. If only two time points are available, then a linear slope between the two time points is used.
 
-`
+```
 slope = generateSlope( lfc, tp, group )
-`
+```
 <br />
 REQUIRES: __findiff.m__ <br /><br />
 
@@ -92,9 +92,9 @@ __6.	salmon.m__
 
 The main function for SALMON for generating the protein scores for each drug treatment. 
 
-`
+```
 [Pscore, A] = salmon( lfc, slope, pgn, grplist, kfold, par, numCores )
-`
+```
 <br />
 INPUT ARGUMENTS:
 

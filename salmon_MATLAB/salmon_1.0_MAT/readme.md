@@ -24,7 +24,7 @@ __1. example_data__
 
 A subfolder in SALMON package, containing microarray data from the chromatin targeting study using mouse pancreatic beta cells __[1]__:
 
-* ___lfc_mouse-pancreas-beta_13010genesX87samples.txt___: log2FC data (_lfc_), pre-processed as described in SALMON manuscript
+* ___lfc_mouse-pancreas-beta_13010genesX87samples.txt___: log2FC data (`lfc`), pre-processed as described in SALMON manuscript
 * ___list_of_genes.txt___:The list of gene symbols corresponding to the rows in the log2FC data
 * ___table_of_samples.txt___: The table of sample descriptions including time points (if in time-series) and group indices (same index for the same drug)
 * ___edges-TFTG_mouse_pancreas_fromCellNet.txt___: Transcription factor (TF)-gene network for mouse pancreas cells obtained from CellNet database __[2]__
@@ -40,9 +40,9 @@ __3.	generatePGN.m__
 
 This function constructs the protein-gene network (PGN) by combining TF-gene and protein-protein interaction networks.
 
-```{r eval=FALSE, echo=TRUE, warning=FALSE}
+`
 pgn = generatePGN(GList, tftg, ppi, tftg_thre, ptf_thre, ppi_thre)
-```
+`
 <br />
 INPUT ARGUMENTS:
 
@@ -64,9 +64,9 @@ __4. 	generateSlope.m__
 
 The function for calculating slope matrix from log2FC data. If more than two time points are available for a given drug/compound treatment, then a 2nd order accurate finite difference approximation is used for calculating the slopes. If only two time points are available, then a linear slope between the two time points is used.
 
-```{r eval=FALSE, echo=TRUE, warning=FALSE}
+`
 slope = generateSlope( lfc, tp, group )
-```
+`
 <br />
 REQUIRES: __findiff.m__ <br /><br />
 
@@ -92,9 +92,9 @@ __6.	salmon.m__
 
 The main function for SALMON for generating the protein scores for each drug treatment. 
 
-```{r eval=FALSE, echo=TRUE, warning=FALSE}
+`
 [Pscore, A] = salmon( lfc, slope, pgn, grplist, kfold, par, numCores )
-```
+`
 <br />
 INPUT ARGUMENTS:
 

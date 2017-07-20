@@ -56,7 +56,7 @@ INPUT ARGUMENTS:
 <br />
 OUTPUT ARGUMENTS:
 
-`pgn`: The n x n adjacency matrix of PGN containing the value 0 or 1. The rows and columns are proteins and genes respectively, which are the same order of the genes in `GList` with the length n. If the (j,i)th element of the matrix is 1, there is an interaction from protein j to gene i in the PGN. Otherwise, 0 is given.
+`pgn`: The _n_ x _n_ adjacency matrix of PGN containing the value 0 or 1. The rows and columns are proteins and genes respectively, which are the same order of the genes in `GList` with the length _n_. If the (j,i)th element of the matrix is 1, there is an interaction from protein _j_ to gene _i_ in the PGN. Otherwise, 0 is given.
 
 
 <br /><br />
@@ -100,7 +100,7 @@ INPUT ARGUMENTS:
 
 * `lfc`:	The matrix of log2FC data. Each row represents a gene and each column represents a sample.
 * `slope`:	The slope matrix from log2FC data. This matrix can be obtained using the function _generateSlope()_. If the data are not time-series, set slope to an empty matrix (i.e. `slope`=[]). 
-* `pgn`: 	The n x n adjacency matrix of the protein-gene regulation network, where n is the number of genes in `GList`. This matrix can be created using the function _generatePGN()_. 
+* `pgn`: 	The _n_ x _n_ adjacency matrix of the protein-gene regulation network, where _n_ is the number of genes in `GList`. This matrix can be created using the function _generatePGN()_. 
 * `grplist`:	The group index for protein scoring. This vector defines the samples for which the protein scores are computed. The length of this vector should be the same as the number of samples in the log2FC matrix. A single (aggregate) protein score is generated for samples with the same index. The group indices should be a consecutive integer starting from 1 to the number of groups.
 * `kfold`:	The number of folds used in the k-fold cross validation.
 * `par`:	A Boolean variable _TRUE_ or _FALSE_ indicating whether to use parallel computing. The default is _FALSE_ (no parallel computation).
@@ -109,7 +109,7 @@ INPUT ARGUMENTS:
 OUTPUT ARGUMENTS:
 
 * `Pscore`: The matrix of protein scores. Each row corresponds to a gene following the same order as the one in the log2FC data, while each column corresponds to a group of samples as defined in the `grplist`.
-*	`A`: The n x n matrix of edge weights of the PGN. The (i,j)th element of the matrix gives the weight of the regulatory edge from protein _j_ to gene _i_ in the PGN, i.e. the regulation of the expression of gene _i_ by protein _j_. The rows and columns of the matrix correspond to genes (columns) and proteins (rows) respectively in the PGN.
+*	`A`: The _n_ x _n_ matrix of edge weights of the PGN. The (i,j)th element of the matrix gives the weight of the regulatory edge from protein _j_ to gene _i_ in the PGN, i.e. the regulation of the expression of gene _i_ by protein _j_. The rows and columns of the matrix correspond to genes (columns) and proteins (rows) respectively in the PGN.
 
 <br /><br />
 #### __REFERENCES__:

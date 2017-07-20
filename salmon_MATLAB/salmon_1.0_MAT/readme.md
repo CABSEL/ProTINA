@@ -56,7 +56,8 @@ INPUT ARGUMENTS:
 <br />
 OUTPUT ARGUMENTS:
 
-`pgn`: The adjacency matrix of PGN.
+`pgn`: The n X n adjacency matrix of PGN containing the value 0 or 1. The rows and columns are proteins and genes respectively, which are the same order of the genes in the log2FC data with length n. If the (j,i)th element of the matrix is 1, there is an interaction from protein j to gene i in the PGN. Otherwise, 0 is given.
+
 
 <br /><br />
 __4. 	generateSlope.m__
@@ -67,10 +68,10 @@ The function for calculating slope matrix from log2FC data. If more than two tim
 slope = generateSlope( lfc, tp, group )
 ```
 <br />
-REQUIRES: __findiff.m__
+REQUIRES: __findiff.m__ <br /><br />
 
 
-<br />
+
 INPUT ARGUMENTS:
 
 * `lfc`:	The matrix of log2FC data. Each row represents a gene and each column represents a sample.
@@ -108,7 +109,7 @@ INPUT ARGUMENTS:
 OUTPUT ARGUMENTS:
 
 * `Pscore`: The matrix of protein scores. Each row corresponds to a gene following the same order as the one in the log2FC data, while each column corresponds to a group of samples as defined in the `grplist`.
-*	`A`: The matrix of edge weights of the PGN. The (i,j)th element of the matrix gives the weight of the regulatory edge from protein _j_ to gene _i_ in the PGN, i.e. the regulation of the expression of gene _i_ by protein _j_. The rows of the matrix correspond to genes in the PGN with at least one regulator, while the columns refer to the proteins in the PGN. 
+*	`A`: The n X n matrix of edge weights of the PGN. The (i,j)th element of the matrix gives the weight of the regulatory edge from protein _j_ to gene _i_ in the PGN, i.e. the regulation of the expression of gene _i_ by protein _j_. The rows and columns of the matrix correspond to genes and proteins respectively in the PGN.
 
 <br /><br />
 #### __REFERENCES__:

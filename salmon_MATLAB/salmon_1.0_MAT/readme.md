@@ -99,8 +99,8 @@ The main function for SALMON for generating the protein scores for each drug tre
 INPUT ARGUMENTS:
 
 * `lfc`:	The matrix of log2FC data. Each row represents a gene and each column represents a sample.
-* `slope`:	The slope matrix from log2FC data. This matrix can be obtained using the function _generateSlope()_. If the data are not time-series, set slope to an empty matrix (i.e. `slope`=[]). 
-* `pgn`: 	The _n_ x _n_ adjacency matrix of the protein-gene regulation network, where _n_ is the number of genes in `GList`. This matrix can be created using the function _generatePGN()_. 
+* `slope`:	The slope matrix from log2FC data. This matrix can be obtained using the function _generateSlope_. If the data are not time-series, set slope to an empty matrix (i.e. `slope`=[]). 
+* `pgn`: 	The _n_ x _n_ adjacency matrix of the protein-gene regulation network, where _n_ is the number of genes in `GList`. This matrix can be created using the function _generatePGN_. 
 * `grplist`:	The group index for protein scoring. This vector defines the samples for which the protein scores are computed. The length of this vector should be the same as the number of samples in the log2FC matrix. A single (aggregate) protein score is generated for samples with the same index. The group indices should be a consecutive integer starting from 1 to the number of groups.
 * `kfold`:	The number of folds used in the k-fold cross validation.
 * `par`:	A Boolean variable _TRUE_ or _FALSE_ indicating whether to use parallel computing. The default is _FALSE_ (no parallel computation).

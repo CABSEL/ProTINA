@@ -108,7 +108,7 @@ INPUT ARGUMENTS:
 OUTPUT ARGUMENTS:
 
 * `Pscore`: The matrix of protein scores. Each row corresponds to a gene following the same order as the one in the log2FC data, while each column corresponds to a group of samples as defined in the `grplist`.
-*	`A`: The matrix containing estimated _a~ij~_ from the log2FC data, where _a~ij~_ indicates the estimated regulatory impact on gene _i_ by protein _j_. The rows correspond to genes having at least one regulator based on the PGN (i.e. zeros for the others).
+*	`A`: The matrix of edge weights of the PGN. The (i,j)th element of the matrix gives the weight of the regulatory edge from protein _j_ to gene _i_ in the PGN, i.e. the regulation of the expression of gene _i_ by protein _j_. The rows of the matrix correspond to genes in the PGN with at least one regulator, while the columns refer to the proteins in the PGN. 
 
 <br /><br />
 #### __REFERENCES__:

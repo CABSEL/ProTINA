@@ -69,7 +69,7 @@ slope = generateSlope( lfc, tp, group )
 ```
 
 REQUIRES: **findiff.m**  
-<br /><br />
+<br />
 
 
 

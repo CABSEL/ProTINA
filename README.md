@@ -30,7 +30,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 
 ### Download and installation
-Please refer to [README for MATLAB](https://github.com/CABSEL/SALMON/blob/master/salmon_MATLAB/readme.md) and [README for R](https://github.com/CABSEL/SALMON/tree/master/salmon_R/salmon_1.0_R/readme.md).
+Please refer to [README for MATLAB](https://github.com/CABSEL/SALMON/blob/master/salmon_MATLAB/readme.md) and [README for R](https://github.com/CABSEL/SALMON/blob/master/salmon_R/readme.md).
 
 ### Acknowledgements
 This work has been supported by the ETH Zurich Research Grant.

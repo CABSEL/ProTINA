@@ -1,4 +1,4 @@
-<img style = "float: right;" src = "https://github.com/CABSEL/SALMON/blob/master/salmon_logo.png" width="150" height="60"> 
+<img style = "float: right;" src = "https://github.com/CABSEL/SALMON/blob/master/salmon_logo.png" width="250" height="100" align="right"> 
 
 
 # SALMON

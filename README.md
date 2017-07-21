@@ -1,3 +1,6 @@
+<img style = "float: right;" src = "https://github.com/CABSEL/SALMON/blob/master/salmon_logo.png" width="150" height="60"> 
+
+
 # SALMON
 
 SALMON (**S**ystems **A**nalysis and **L**earning for inferring **Mo**difiers of **N**etworks) is a network-based analytical tool for identifying protein targets of compounds from gene transcriptional profiles. SALMON scores proteins according to the enhancement or attenuation of the protein-gene regulatory interactions caused by a compound treatment. The magnitude of the scores indicates the degree of compound-induced alterations in the gene regulatory activity of a protein, while the sign of the scores indicates the direction of the alterations (positive: enhancement, negative: attenuation). In SALMON, the protein targets of a compound are ranked according to the magnitudes of the protein scores. 

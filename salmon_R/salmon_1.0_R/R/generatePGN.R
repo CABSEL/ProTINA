@@ -15,7 +15,7 @@
 #' 
 #' @param ppi_thre A threshold for protein-protein interaction. This variable is used only when the confidence score of protein-protein interactions are given in the matrix ppi.  Any protein-protein interactions with the scores lower than the threshold will be excluded.
 #' 
-#' @return \item{pgn}{The adjacency matrix of PGN}
+#' @return \item{pgn}{The adjacency matrix of PGN. The elements of the matrix are either 0 or 1. The rows and columns correspond to proteins and genes, respectively, which follow the order given in GList. If the (i,j)-th element of the matrix is 1, then there exists a regulatory edge from protein i to gene j in the PGN, i.e. protein i is regulating the expressio of gene j.}
 #' 
 #' @export
 generatePGN <- function(glist,tftg,ppi,tftg_thre=NULL,ptf_thre=NULL,ppi_thre=NULL){
@@ -139,5 +139,6 @@ generatePGN <- function(glist,tftg,ppi,tftg_thre=NULL,ptf_thre=NULL,ppi_thre=NUL
   edgen <- length(pgn$v)
   cat(sprintf("Protein-gene network with %d proteins and TFs, %d downstream genes and %d interactions has been generated.\n",protn,dgn,edgen))
   
+  pgn[pgn!=0] <- 1
   return(pgn)
 }

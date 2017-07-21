@@ -13,7 +13,7 @@
 #' 
 #' @return a list of two matrices
 #' \item{Pscore}{The matrix of protein scores. Each row corresponds to a gene following the same order as the one in the log2FC data, while each column corresponds to a group of samples as defined in the grplist.}
-#' \item{A}{The matrix of PGN edges. The rows correspond to genes having at least one regulator based on the PGN (i.e. zeros for the others).}
+#' \item{A}{The matrix of edge weights of the PGN. The (i,j)-th element of the matrix corresponds to the weight of the regulatory edge from protein j to gene i in the PGN, i.e.the regulation of the expression of gene i  by protein j. The rwos and columns of the matrix correspond to genes and proteins in the PGN.}
 #' 
 #' @export
 salmon <- function(lfc,slope=NULL,pgn,grplist,kfold=10,par=FALSE,numCores=4){
@@ -139,5 +139,7 @@ salmon <- function(lfc,slope=NULL,pgn,grplist,kfold=10,par=FALSE,numCores=4){
   Pscore <- matrix(0,nrow = n, ncol = muni)
   Pscore[proti,] <- zp 
   
-  return(list(Pscore=Pscore,A=A))
+  Af <- matrix(0,nrow = n, ncol = n)
+  Af[dg,] = A
+  return(list(Pscore=Pscore,A=Af))
 }

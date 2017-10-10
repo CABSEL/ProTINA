@@ -13,12 +13,12 @@ To install `protina` directly from github repository, `devtools` is required.
 3. Load the package, using `library(protina)`.
 
 
-#### Example data in SALMON package
+#### Example data in ProTINA package
 
-SALMON package includes microarray data from the chromatin targeting study using mouse pancreatic beta cells [1]:
+ProTINA package includes microarray data from the chromatin targeting study using mouse pancreatic beta cells [1]:
 
 
-`lfc`: log2FC data, pre-processed as described in SALMON manuscript
+`lfc`: log2FC data, pre-processed as described in proTINA manuscript
 
 `glist`: The list of gene symbols corresponding to the rows in the log2FC data
 
@@ -29,9 +29,9 @@ SALMON package includes microarray data from the chromatin targeting study using
 `ppi`: protein-protein interactions for mouse cells obtained from STRING database [3]
 
 
-#### Preparation for SALMON inputs
+#### Preparation for ProTINA inputs
 
-SALMON requires log2FC data and slope matrix (if data are time-series) and the adjacency matrix of protein-gene network (PGN). 
+ProTINA requires log2FC data and slope matrix (if data are time-series) and the adjacency matrix of protein-gene network (PGN). 
 
 The slope matrix can be calculated using `generateSlope` function.
 
@@ -41,7 +41,7 @@ group <- tobject$group ## a vector of indices of the grouped samples
 slope <- generateSlope(lfc = lfc, tp = tp, group = group)
 ```
 
-PGN is constructed using TF-gene and protein-protein interactions. Here, we used the same thretholds as described in the SALMON manuscript.
+PGN is constructed using TF-gene and protein-protein interactions. Here, we used the same thretholds as described in the ProTINA manuscript.
 
 ```{r warning=FALSE,eval=FALSE,echo=TRUE}
 pgn <- generatePGN(glist = glist, tftg = tftg, ppi = ppi, tftg_thre = 0, ptf_thre = 0, 
@@ -49,23 +49,23 @@ pgn <- generatePGN(glist = glist, tftg = tftg, ppi = ppi, tftg_thre = 0, ptf_thr
 ```
 
 
-#### Calculating protein perturbation scores by SALMON
-SALMON can provide an overall score for each protein in the grouped samples. If you want a score for each sample, set each sample to a single group. Here, we grouped the sample for each different drug, and used 10-fold cross validation (default). The outcome of SALMON is a list of protein score matrix and weighted PGN. To note, the rows in the outcome PGN matrix correspond to genes having at least one regulator based on the prior PGN (i.e. zeros for the others).
+#### Calculating protein perturbation scores by proTINA
+ProTINA can provide an overall score for each protein in the grouped samples. If you want a score for each sample, set each sample to a single group. Here, we grouped the sample for each different drug, and used 10-fold cross validation (default). The outcome of ProTINA is a list of protein score matrix and weighted PGN. To note, the rows in the outcome PGN matrix correspond to genes having at least one regulator based on the prior PGN (i.e. zeros for the others).
 
 ```{r warning=FALSE,eval=FALSE,echo=TRUE}
-result <- salmon(lfc = lfc, slope = slope, pgn = pgn, grplist = group)
+result <- protina(lfc = lfc, slope = slope, pgn = pgn, grplist = group)
 result$Pscore ## protein score matrix
 result$A ## weigted PGN
 ```
 
-Parallel computation is also available in SALMON. The following example shows parallel computation (`par`=`TRUE`) using 4 cores.  
+Parallel computation is also available in ProTINA. The following example shows parallel computation (`par`=`TRUE`) using 4 cores.  
 ```{r warning=FALSE,eval=FALSE,echo=TRUE}
-result <- salmon(lfc = lfc, slope = slope, pgn = pgn, grplist = group, par = TRUE, 
+result <- protina(lfc = lfc, slope = slope, pgn = pgn, grplist = group, par = TRUE, 
                  numCores = 4)
 ```
 
 #### Ranking the proteins based on the magnitudes of estimated scores
-The greater magnitude of the scores by SALMON implies the higher perturbation caused by the drug. In this mouse dataset, trichostatin A is a well known histone deacetylase inhibitor. As an example, we can examine the ranks of histone deacetylases (Hdac1-Hdac11) for trichostatin.
+The greater magnitude of the scores by ProTINA implies the higher perturbation caused by the drug. In this mouse dataset, trichostatin A is a well known histone deacetylase inhibitor. As an example, we can examine the ranks of histone deacetylases (Hdac1-Hdac11) for trichostatin.
 
 ```{r warning=FALSE,eval=FALSE,echo=TRUE}
 oi <- order(abs(result$Pscore[,16]),decreasing=TRUE)## 16th column for trichostatin A 
@@ -75,7 +75,6 @@ hdac <- glist[5096:5103] ## hdac genes
 hdac.rank <- list(match(hdac,ranked.list))
 names(hdac.rank) <- hdac
 hdac.rank
-
 ```
 
 

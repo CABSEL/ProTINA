@@ -1,9 +1,4 @@
----
-title: "SALMON package (MATLAB)"
-author: "Heeju Noh", "Rudiyanto Gunawan"
-date: "July 19, 2017"
-output: html_document
----
+
 ### SALMON version 1.0
 The MATLAB subroutines in the SALMON package (__v.1.0__) have been successfully tested on __MATLAB® 2014b to 2017a__  platforms. Please refer to the SALMON manuscript for more detailed information about the algorithm. Any questions regarding SALMON usage can be addressed to heeju.noh@chem.ethz.ch or to rudi.gunawan@chem.ethz.ch.
 

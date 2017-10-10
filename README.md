@@ -11,7 +11,7 @@ For MATLAB distribution,
 * [GLMNET package](http://web.stanford.edu/~hastie/glmnet_matlab/)
 
 For R distribution,
-* R software (>=3.3.2)
+* R software (>=3.4.1)
 * `devtools` package in R
 
 

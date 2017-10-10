@@ -49,7 +49,7 @@ protina <- function(lfc,slope=NULL,pgn,grplist,kfold=10,par=FALSE,numCores=4){
     registerDoParallel(cl)
     
     A <- foreach(j=1:length(dg),.combine = rbind,.packages = "glmnet")%dopar%{
-      cat(sprintf("Infering weights in PGN: (%6.3f)%%\n",(100*j/length(dg))))
+      cat(sprintf("Inferring weights in PGN: (%6.3f)%%\n",(100*j/length(dg))))
       ppar <- pgn$i[pgn$j==dg[j]]
       
       if(!is.null(slope)){
@@ -80,7 +80,7 @@ protina <- function(lfc,slope=NULL,pgn,grplist,kfold=10,par=FALSE,numCores=4){
   }else{
     A <- matrix(0,nrow = length(dg), ncol = n)
     for (j in 1:length(dg)) {
-      cat(sprintf("Infering weights in PGN: (%6.3f)%%\n",(100*j/length(dg))))
+      cat(sprintf("Inferring weights in PGN: (%6.3f)%%\n",(100*j/length(dg))))
       ppar <- pgn$i[pgn$j==dg[j]]
    
       

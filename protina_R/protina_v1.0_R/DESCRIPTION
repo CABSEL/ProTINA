@@ -1,0 +1,20 @@
+Package: protina
+Title: Protein Target Inference by Network Analysis
+Version: 0.1.0
+Authors@R: c(
+    person("Heeju", "Noh", email = "heeju.noh@chem.ethz.ch", role = c("aut","cre")),
+    person("Rudiyanto", "Gunawan", email = "rudi.gunawan@chem.ethz.ch", role = "aut"))
+Description: ProTINA is a network based method for identifying molecular targets of drug treatments. ProTINA provides the perturbation scores of proteins under a drug treatment of interest, using (time-series) gene expression data and prior network information (protein-gene network). 
+Depends: R (>= 3.4.1)
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: glmnet,
+	slam,
+	doParallel,
+	foreach,
+	BSDA
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

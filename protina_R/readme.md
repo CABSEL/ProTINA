@@ -73,7 +73,7 @@ ranked.list <- glist[oi]
 hdac <- glist[5096:5103] ## hdac genes
 
 hdac.rank <- list(match(hdac,ranked.list))
-names(hdac.rank) <- hdac
+names(hdac.rank[[1]]) <- hdac
 hdac.rank
 ```
 

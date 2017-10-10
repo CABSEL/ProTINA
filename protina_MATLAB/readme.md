@@ -1,25 +1,27 @@
 
-### SALMON version 1.0
-The MATLAB subroutines in the SALMON package (__v.1.0__) have been successfully tested on __MATLAB® 2014b to 2017a__  platforms. Please refer to the SALMON manuscript for more detailed information about the algorithm. Any questions regarding SALMON usage can be addressed to heeju.noh@chem.ethz.ch or to rudi.gunawan@chem.ethz.ch.
+### ProTINA version 1.0
+The MATLAB subroutines in the ProTINA package (__v.1.0__) have been successfully tested on __MATLAB® 2014b to 2017a__  platforms. Please refer to the ProTINA manuscript for more detailed information about the algorithm. Any questions regarding ProTINA usage can be addressed to heeju.noh@chem.ethz.ch or to rudi.gunawan@chem.ethz.ch.
 
 #
 > #### Installation instruction: 
 
-1.	Unzip the package [___SALMON_1.0_MAT.zip___](https://github.com/CABSEL/SALMON/blob/master/salmon_MATLAB/salmon_1.0_MAT.zip) (7.03MB) to a preferred folder.
-2.	Download the MATLAB version of [GLMNET package](http://web.stanford.edu/~hastie/glmnet_matlab/download.html), and unzip the GLMNET package under a new subfolder in SALMON.  
-3.	Set the current working directory to SALMON in MATLAB. 
+1.	Unzip the package [___protina_v1.0_MAT.zip___](https://github.com/CABSEL/ProTINA/blob/master/protina_MATLAB/protina_v1.0_MAT.zip) (7.51MB) to a preferred folder.
+2.	Download the MATLAB version of [GLMNET package](http://web.stanford.edu/~hastie/glmnet_matlab/download.html), and unzip the GLMNET package under a new subfolder in ProTINA.  
+3.	Set the current working directory to ProTINA in MATLAB. 
 4.	Add the path for GLMNET package.
 
+**Note:** glmnet package may not work in Matlab later than 2015b in windows. For the later version of Matlab in windows, glmnet function in Fortran may need to be compiled again.  
+
 #
- >  #### The SALMON package includes the following:
+ >  #### The ProTINA package includes the following:
 
 <br />
 
 __1. example_data__
 
-A subfolder in SALMON package, containing microarray data from the chromatin targeting study using mouse pancreatic beta cells __[1]__:
+A subfolder in ProTINA package, containing microarray data from the chromatin targeting study using mouse pancreatic beta cells __[1]__:
 
-* ___lfc_mouse-pancreas-beta_13010genesX87samples.txt___: log2FC data (`lfc`), pre-processed as described in SALMON manuscript
+* ___lfc_mouse-pancreas-beta_13010genesX87samples.txt___: log2FC data (`lfc`), pre-processed as described in ProTINA manuscript
 * ___list_of_genes.txt___:The list of gene symbols corresponding to the rows in the log2FC data
 * ___table_of_samples.txt___: The table of sample descriptions including time points (if in time-series) and group indices (same index for the same drug)
 * ___edges-TFTG_mouse_pancreas_fromCellNet.txt___: Transcription factor (TF)-gene network for mouse pancreas cells obtained from CellNet database __[2]__
@@ -79,17 +81,17 @@ OUTPUT ARGUMENTS:
 `slope`: the slope matrix
 
 <br /><br />
-__5.	run_salmon_example.m__
+__5.	run_protina_example.m__
 
-An example script of running SALMON for mouse pancreas data.
+An example script of running ProTINA for mouse pancreas data.
 
 <br /><br />
-__6.	salmon.m__
+__6.	protina.m__
 
-The main function for SALMON for generating the protein scores for each drug treatment. 
+The main function for ProTINA for generating the protein scores for each drug treatment. 
 
 ```
-[Pscore, A] = salmon( lfc, slope, pgn, grplist, kfold, par, numCores )
+[Pscore, A] = protina( lfc, slope, pgn, grplist, kfold, par, numCores )
 ```
 <br />
 INPUT ARGUMENTS:

@@ -1,7 +1,7 @@
 
 ### ProTINA version 1.0
 
-The R version of ProTINA package (__v.1.0__) have been successfully tested on __R (>= 3.3.2)__  platforms. Please refer to the ProTINA manuscript for more detailed information about the algorithm. Any questions regarding ProTINA usage can be addressed to heeju.noh@chem.ethz.ch or to rudi.gunawan@chem.ethz.ch.
+The R version of ProTINA package (__v.1.0__) have been successfully tested on __R (>= 3.3.2)__  platforms. Please refer to the ProTINA manuscript for more detailed information about the algorithm. Any questions regarding ProTINA usage can be addressed to heeju.noh@outlook.com or to rudi.gunawan@chem.ethz.ch.
 
 
 #### Installation instruction:
